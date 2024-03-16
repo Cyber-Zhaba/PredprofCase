@@ -5,7 +5,7 @@ with open("space.txt", "r", encoding="utf-8") as csvfile:
     # Формат переменной data: list[dict[str, str]]
     data = list(csv.DictReader(csvfile, delimiter="*"))
     data_by_name = {
-        data[i]['ShipName']: (data[i]['planet'], data[i]['direction'])
+        data[i]["ShipName"]: (data[i]["planet"], data[i]["direction"])
         for i in range(len(data))
     }
 

@@ -10,7 +10,7 @@ def sort(lst):
     n = len(lst)
     for i in range(n):
         for j in range(i + 1, n):
-            if int(lst[i].split('-')[1]) > int(lst[j].split('-')[1]):
+            if int(lst[i].split("-")[1]) > int(lst[j].split("-")[1]):
                 lst[i], lst[j] = lst[j], lst[i]
 
 

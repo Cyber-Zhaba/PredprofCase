@@ -29,10 +29,10 @@ with open("space.txt", "r", encoding="utf-8") as csvfile:
 # Обработка строк и запись в конечный файл
 with open("space_uniq_password.csv", "w", encoding="utf-8") as csvfile:
     writer = csv.writer(csvfile, lineterminator="\r")
-    writer.writerow(list(data[0].keys()) + ['password'])
+    writer.writerow(list(data[0].keys()) + ["password"])
 
     for row in data:
         # Создание пароля
-        row['password'] = generate_password(row["ShipName"], row["planet"])
+        row["password"] = generate_password(row["ShipName"], row["planet"])
         # Запись в конечный файл
         writer.writerow(row.values())

@@ -28,11 +28,11 @@ with open("space_new.txt", "w", encoding="utf-8") as csvfile:
     writer.writerow(data[0].keys())
 
     for row in data:
-        if row['coord_place'] == "0 0":
+        if row["coord_place"] == "0 0":
             # Формируем необхдимые переменные
-            n, m = two_digits(row['ShipName'])
-            t = len(row['planet'].strip().rstrip())
-            dir_x, dir_y = map(int, row['direction'].split())
+            n, m = two_digits(row["ShipName"])
+            t = len(row["planet"].strip().rstrip())
+            dir_x, dir_y = map(int, row["direction"].split())
 
             # Обработка условия
             if n > 5:
@@ -47,9 +47,9 @@ with open("space_new.txt", "w", encoding="utf-8") as csvfile:
             row["coord_place"] = f"{x} {y}"
 
         # Вывод на экран информации о короблях, у которых последний элемент кода равен “V”.
-        letters = row['ShipName'].split('-')[0]
+        letters = row["ShipName"].split('-')[0]
         if letters[-1] == 'V':
             x, y = row["coord_place"].split()
-            print(f" {row['ShipName']} - ({x}, {y})")
+            print(f" {row["ShipName"]} - ({x}, {y})")
 
         writer.writerow(row.values())
